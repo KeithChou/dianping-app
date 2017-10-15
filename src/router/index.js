@@ -1,13 +1,21 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
+import Detail from '../page/Detail'
+import Home from '../page/Home'
+import List from '../page/List'
+import NotFound from '../page/NotFound'
 
-class Router extends React.Component {
+class RouterMap extends React.Component {
   render () {
     return (
-      <Router>
-      </Router>
+      <Switch>
+        <Route path='/home' component={Home} ></Route>
+        <Route path='/list' component={List}></Route>
+        <Route path='/detail' component={Detail}></Route>
+        <Route component={NotFound}></Route>
+      </Switch>
     )
   }
 }
 
-export default Router
+export default RouterMap
